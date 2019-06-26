@@ -1,0 +1,10 @@
+pip install support/Twisted-19.2.0-cp36-cp36m-win_amd64.whl
+pip install --upgrade lxml
+pip install scrapy
+pip install psycopg2
+pip install schedule
+pip install pywin32
+pip install selenium
+pip install support/pyHook-1.5.1-cp36-cp36m-win_amd64.whl
+pip install PyUserInput
+pip install PyMySQL

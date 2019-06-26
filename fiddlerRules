@@ -1,0 +1,16 @@
+打开fillder,点击Rules/Customize,添加代码到OnBeforeRequest方法中,路径需要换成真实路径
+
+if (oSession.fullUrl.Contains("https://mp.weixin.qq.com/mp/getmasssendmsg")) {
+            var filename = "E:/CodeSource/DCS/DCS_BIGDATA/spilders/news/news/spiders/request.txt";
+			//var logContent = "url: " + oSession.url;
+			//logContent += "\r\ncookie: " + oSession.oRequest["cookie"];
+			var logContent = '{ "url":' + '"' + oSession.url + '"' + ' , "cookie":' + '"' + oSession.oRequest["cookie"] + '"' +'}';
+			var sw : System.IO.StreamWriter;
+            if (System.IO.File.Exists(filename)){
+                System.IO.File.Delete(filename)
+            }
+            sw = System.IO.File.CreateText(filename);
+            sw.Write(logContent);
+            sw.Close();
+            sw.Dispose();
+        }
